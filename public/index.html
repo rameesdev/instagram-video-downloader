@@ -1,177 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO Meta Tags -->
-  <title>Instagram Video Downloader - Free & Fast | Download Reels</title>
-  <meta name="description" content="Download Instagram videos for free. Fast, secure Instagram video downloader tool. Save Instagram reels, videos, and stories instantly. No registration required.">
-  <meta name="keywords" content="instagram video downloader, download instagram videos, instagram downloader, save instagram videos, instagram video saver, download reels, instagram stories downloader, free instagram downloader">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="InstaSave">
-
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Free Instagram Video Downloader - Download Instagram Videos Online">
-  <meta property="og:description" content="Download Instagram videos for free. Fast, secure Instagram video downloader tool. Save Instagram reels and videos instantly.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://instasave.com">
-  <meta property="og:image" content="https://instasave.com/og-image.jpg">
-
-  <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Free Instagram Video Downloader">
-  <meta name="twitter:description" content="Download Instagram videos for free. Fast, secure Instagram video downloader tool.">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://instasave.com">
-
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
-
-  <!-- Inline Critical CSS -->
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:#f8fafc;line-height:1.6}
-    .container{max-width:800px;margin:0 auto;padding:20px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
-    .card{background:#fff;padding:40px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center}
-    .title{font-size:2.5rem;font-weight:700;color:#1e293b;margin-bottom:8px}
-    .subtitle{color:#64748b;margin-bottom:32px;font-size:1.1rem}
-    .form{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
-    .input{flex:1;padding:14px;border:2px solid #e2e8f0;border-radius:10px;font-size:16px;min-width:300px;transition:border-color 0.2s}
-    .input:focus{outline:none;border-color:#8b5cf6}
-    .btn{background:#8b5cf6;color:#fff;padding:14px 24px;border:none;border-radius:10px;font-weight:600;cursor:pointer;transition:background 0.2s,font-size 0.2s}
-    .btn:hover{background:#7c3aed}
-    .btn:disabled{opacity:0.5;cursor:not-allowed}
-    .status{min-height:40px;margin-top:16px}
-    .text-green{color:#059669}
-    .text-red{color:#dc2626}
-    .text-gray{color:#6b7280}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px;text-align:left}
-    .feature{padding:20px;background:#f1f5f9;border-radius:12px}
-    .feature h3{color:#1e293b;margin-bottom:8px;font-weight:600}
-    .feature p{color:#64748b;font-size:14px}
-    .faq{margin-top:40px;text-align:left}
-    .faq h2{color:#1e293b;margin-bottom:20px;font-size:1.5rem}
-    .faq-item{margin-bottom:16px;padding:16px;background:#f8fafc;border-radius:8px}
-    .faq-item h3{color:#374151;margin-bottom:8px;font-size:1rem}
-    .faq-item p{color:#6b7280;font-size:14px}
-    @media (max-width:768px){
-        .title{font-size:2rem}
-        .form{flex-direction:column}
-        .input{min-width:100%}
-        .card{padding:24px}
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <main class="card">
-      <header>
-        <h1 class="title">Instagram Video Downloader</h1>
-        <p class="subtitle">Download Instagram videos, reels, and stories for free. Fast, secure, and easy to use.</p>
-      </header>
-
-      <form id="downloadForm" class="form" role="form" aria-label="Instagram video download form">
-        <input 
-          type="url" 
-          id="instaUrl" 
-          name="url" 
-          placeholder="Paste Instagram video URL here..." 
-          required
-          class="input"
-          aria-label="Instagram video URL"
-          autocomplete="url"
-        >
-        <button type="submit" id="downloadButton" class="btn" aria-label="Download Instagram video">
-          Download Video
-        </button>
-      </form>
-
-      <div id="statusMessage" class="status" role="status" aria-live="polite"></div>
-
-      <!-- Feature Section -->
-      <section class="features">
-        <div class="feature"><h3>🚀 Fast Downloads</h3><p>Download Instagram videos in seconds with our optimized servers</p></div>
-        <div class="feature"><h3>🔒 Safe & Secure</h3><p>No malware, no registration required. Your privacy is protected</p></div>
-        <div class="feature"><h3>📱 All Devices</h3><p>Works on mobile, tablet, and desktop. Download anywhere, anytime</p></div>
-        <div class="feature"><h3>🎬 High Quality</h3><p>Download videos in original quality, including HD and Full HD</p></div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How to download Instagram videos?</h3><p>Simply paste the Instagram video URL into the input field above and click "Download Video".</p></div>
-        <div class="faq-item"><h3>Is it free to download Instagram videos?</h3><p>Yes! Completely free. No hidden fees or registration required.</p></div>
-        <div class="faq-item"><h3>What video formats are supported?</h3><p>We support MP4 format downloads.</p></div>
-        <div class="faq-item"><h3>Can I download Instagram Reels and Stories?</h3><p>Yes! Videos, Reels, and Stories are supported in high quality.</p></div>
-      </section>
-    </main>
-  </div>
-
-  <!-- Fixed JavaScript -->
-  <script>
-    const form = document.getElementById('downloadForm');
-    const statusDiv = document.getElementById('statusMessage');
-    const downloadButton = document.getElementById('downloadButton');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const url = document.getElementById('instaUrl').value.trim();
-
-      if (!url || !url.includes('instagram.com')) {
-        statusDiv.innerHTML = '<p class="text-red">❌ Please enter a valid Instagram URL</p>';
-        return;
-      }
-
-      statusDiv.innerHTML = '<p class="text-gray">Processing your request...</p>';
-      downloadButton.disabled = true;
-      downloadButton.textContent = 'Processing...';
-
-      try {
-        const response = await fetch('/download', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url })
-        });
-
-        const data = await response.json();
-
-        if (response.ok && data.success) {
-          statusDiv.innerHTML = `
-            <p class="text-green">✅ Video ready for download!</p>
-            <button id="finalDownloadButton" class="btn" style="margin-top:12px">Download Now</button>
-          `;
-
-          document.getElementById('finalDownloadButton').onclick = async () => {
-            try {
-              statusDiv.innerHTML = '<p class="text-gray">Starting download...</p>';
-              const videoResponse = await fetch(data.url);
-              const videoBlob = await videoResponse.blob();
-
-              const link = document.createElement('a');
-              link.href = URL.createObjectURL(videoBlob);
-              link.download = `instagram_video_${Date.now()}.mp4`;
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-
-              statusDiv.innerHTML = '<p class="text-green">✅ Download complete!</p>';
-            } catch (err) {
-              statusDiv.innerHTML = '<p class="text-red">❌ Download failed. Please try again.</p>';
-            }
-          };
-        } else {
-          statusDiv.innerHTML = `<p class="text-red">❌ ${data.error || 'Failed to process video.'}</p>`;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Video Downloader</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
         }
-      } catch (error) {
-        statusDiv.innerHTML = '<p class="text-red">❌ Connection error. Please try again.</p>';
-      } finally {
-        downloadButton.disabled = false;
-        downloadButton.textContent = 'Download Video';
-      }
-    });
-  </script>
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">Insta Video Downloader</h1>
+        <p class="text-gray-500 mb-6">Paste the URL of an Instagram video below to download it instantly.</p>
+
+        <form id="downloadForm" class="flex flex-col md:flex-row gap-4 mb-6">
+            <input type="url" id="instaUrl" name="url" placeholder="Paste Instagram video URL here..." required
+                   class="flex-grow p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200">
+            <button type="submit" id="downloadButton"
+                    class="bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-purple-700 transition duration-300 transform hover:scale-105">
+                Download
+            </button>
+        </form>
+
+        <div id="statusMessage" class="min-h-[2rem]"></div>
+    </div>
+
+    <script>
+        document.getElementById('downloadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const url = document.getElementById('instaUrl').value;
+            const statusDiv = document.getElementById('statusMessage');
+            const downloadButton = document.getElementById('downloadButton');
+
+            statusDiv.innerHTML = `<p class="text-gray-500 animate-pulse">Processing...</p>`;
+            downloadButton.disabled = true;
+
+            try {
+                const response = await fetch('/download', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: url })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    const videoUrl = data.url;
+                    statusDiv.innerHTML = `
+                        <p class="text-green-600 font-semibold mb-2">Download link generated!</p>
+                        <button id="finalDownloadButton"
+                           class="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
+                           Click to Download
+                        </button>
+                    `;
+                    
+                    // Add event listener to the new download button
+                    document.getElementById('finalDownloadButton').addEventListener('click', async () => {
+                        const tempStatusDiv = document.getElementById('statusMessage');
+                        tempStatusDiv.innerHTML = `<p class="text-gray-500 animate-pulse">Starting download...</p>`;
+                        try {
+                            const videoResponse = await fetch(videoUrl);
+                            const videoBlob = await videoResponse.blob();
+                            
+                            const downloadLink = document.createElement('a');
+                            downloadLink.href = URL.createObjectURL(videoBlob);
+                            downloadLink.download = `instagram_video_${Date.now()}.mp4`;
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click();
+                            document.body.removeChild(downloadLink);
+                            
+                            tempStatusDiv.innerHTML = `<p class="text-green-600 font-semibold">Download complete!</p>`;
+
+                        } catch (downloadError) {
+                            console.error('Download error:', downloadError);
+                            tempStatusDiv.innerHTML = `<p class="text-red-600 font-semibold">Failed to start download. Please try again.</p>`;
+                        }
+                    });
+
+                } else {
+                    statusDiv.innerHTML = `<p class="text-red-600 font-semibold">${data.error || 'An unknown error occurred.'}</p>`;
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                statusDiv.innerHTML = `<p class="text-red-600 font-semibold">An unexpected error occurred. Please check the URL and try again.</p>`;
+            } finally {
+                downloadButton.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>
