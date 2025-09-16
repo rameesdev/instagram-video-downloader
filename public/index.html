@@ -172,6 +172,38 @@
             };
         }
 
+        // Function to download video from blob URL
+        async function downloadVideoFromUrl(videoUrl) {
+            try {
+                statusDiv.innerHTML = '<p class="text-gray">Starting download...</p>';
+                
+                // Fetch the video content
+                const videoResponse = await fetch(videoUrl);
+                if (!videoResponse.ok) {
+                    throw new Error(`Failed to fetch video: ${videoResponse.status}`);
+                }
+                
+                // Create blob from response
+                const videoBlob = await videoResponse.blob();
+                
+                // Create download link and trigger download
+                const downloadLink = document.createElement('a');
+                downloadLink.href = URL.createObjectURL(videoBlob);
+                downloadLink.download = `instagram_video_${Date.now()}.mp4`;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Clean up the blob URL after some time
+                setTimeout(() => URL.revokeObjectURL(downloadLink.href), 10000);
+                
+                statusDiv.innerHTML = '<p class="text-green">✅ Download complete!</p>';
+            } catch (downloadError) {
+                console.error('Download error:', downloadError);
+                statusDiv.innerHTML = '<p class="text-red">❌ Failed to start download. Please try again.</p>';
+            }
+        }
+
         // Optimized form submission with error handling
         const handleSubmit = debounce(async function(e) {
             e.preventDefault();
@@ -210,23 +242,8 @@
                         </button>
                     `;
                     
-                    document.getElementById('finalDownloadButton').onclick = async () => {
-                        try {
-                            statusDiv.innerHTML = '<p class="text-gray">Starting download...</p>';
-                            
-                            const link = document.createElement('a');
-                            link.href = data.url;
-                            link.download = `instagram_video_${Date.now()}.mp4`;
-                            link.style.display = 'none';
-                            
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            
-                            statusDiv.innerHTML = '<p class="text-green">✅ Download started successfully!</p>';
-                        } catch (err) {
-                            statusDiv.innerHTML = '<p class="text-red">❌ Download failed. Please try again.</p>';
-                        }
+                    document.getElementById('finalDownloadButton').onclick = () => {
+                        downloadVideoFromUrl(data.url);
                     };
                 } else {
                     statusDiv.innerHTML = `<p class="text-red">❌ ${data.error || 'Failed to process video. Please check the URL and try again.'}</p>`;
