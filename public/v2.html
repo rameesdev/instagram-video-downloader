@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelSaver Pro - Download Instagram Reels, Videos & Stories Free</title>
+    <meta name="description" content="Easily download Instagram reels, videos, and stories in high quality. Completely free, no sign-up required, compatible with mobile and desktop.">
+    <meta name="keywords" content="Instagram reel downloader, free Instagram video saver, download IG stories, HD Instagram downloader online">
+    <meta name="author" content="ReelSaver Team">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://saveinstareels.vercel.app">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+
+    <!-- Fonts & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #ffffff;
+            color: #333333;
+        }
+        header {
+            background: linear-gradient(to right, #4f46e5, #7c3aed);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        button, input {
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        input:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 8px rgba(79,70,229,0.4);
+        }
+        .feature-card {
+            background: #f9fafb;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+        .step-icon {
+            background: #4f46e5;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 16px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="py-8">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">ReelSaver Pro</h1>
+        <p class="mt-2 text-lg text-indigo-100">Your go-to tool for saving Instagram reels, videos, and stories in HD – fast and free!</p>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="py-16">
+    <div class="container mx-auto px-6">
+
+        <!-- Download Form Section -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="feature-card p-10">
+                <h2 class="text-3xl font-bold mb-6 text-center">Enter Instagram Link to Download</h2>
+                <form id="downloadForm" class="flex flex-col md:flex-row gap-4 items-center">
+                    <input type="url" id="instaUrl" name="url" 
+                           placeholder="Enter the Instagram reel/video/story URL..." required
+                           class="flex-grow p-5 rounded-lg border-2 border-gray-200 text-xl shadow-sm">
+                    <button type="submit" id="downloadButton" 
+                            class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg text-xl shadow-md hover:bg-indigo-700">
+                        Download Now
+                    </button>
+                </form>
+                <div id="statusMessage" class="mt-8 text-center text-gray-700 text-lg"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Why Choose ReelSaver Pro?</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="feature-card p-8 text-center">
+                    <div class="mb-4">
+                        <svg class="w-14 h-14 mx-auto text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Completely Free</h3>
+                    <p class="text-gray-600">Unlimited downloads without any hidden fees or subscriptions.</p>
+                </div>
+                <div class="feature-card p-8 text-center">
+                    <div class="mb-4">
+                        <svg class="w-14 h-14 mx-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
+                    <p class="text-gray-600">Get your downloads in seconds with our high-speed servers.</p>
+                </div>
+                <div class="feature-card p-8 text-center">
+                    <div class="mb-4">
+                        <svg class="w-14 h-14 mx-auto text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Secure & Anonymous</h3>
+                    <p class="text-gray-600">No personal data collected – download privately and safely.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section>
+            <h2 class="text-3xl font-bold text-center mb-10">Simple Steps to Download</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="feature-card p-8 text-center">
+                    <div class="step-icon text-2xl">1</div>
+                    <p class="text-lg">Copy the link from your favorite Instagram post, reel, or story.</p>
+                </div>
+                <div class="feature-card p-8 text-center">
+                    <div class="step-icon text-2xl">2</div>
+                    <p class="text-lg">Paste it into the input field above and hit the download button.</p>
+                </div>
+                <div class="feature-card p-8 text-center">
+                    <div class="step-icon text-2xl">3</div>
+                    <p class="text-lg">Save the high-quality file directly to your device.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-10 bg-gray-100 text-center text-gray-600 text-base">
+    &copy; 2025 ReelSaver Pro. All rights reserved. Always respect content creators' copyrights.
+</footer>
+
+<script>
+document.getElementById('downloadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const url = document.getElementById('instaUrl').value;
+  const statusDiv = document.getElementById('statusMessage');
+  const downloadButton = document.getElementById('downloadButton');
+
+  statusDiv.innerHTML = 'Processing your video...';
+  downloadButton.disabled = true;
+
+  try {
+    const response = await fetch('/download', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      const videoUrl = data.url;
+      statusDiv.innerHTML = `<button id="finalDownloadButton" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Download Video</button>`;
+      document.getElementById('finalDownloadButton').addEventListener('click', async () => {
+        const videoResponse = await fetch(videoUrl);
+        const videoBlob = await videoResponse.blob();
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(videoBlob);
+        link.download = `instagram_video_${Date.now()}.mp4`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        statusDiv.innerHTML = 'Download completed!';
+      });
+    } else {
+      statusDiv.innerHTML = data.error || 'Failed to process video.';
+    }
+  } catch (err) {
+    statusDiv.innerHTML = 'Network error. Try again.';
+  } finally {
+    downloadButton.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>

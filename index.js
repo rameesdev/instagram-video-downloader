@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.get("/V2",(req,res)=>{
+  res.sendFile(__dirname+"/public/v2.html")
+})
 
 app.post('/download', async (req, res) => {
   const { url } = req.body;
