@@ -11,7 +11,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get("/V2",(req,res)=>{
   res.sendFile(__dirname+"/public/v2.html")
 })
-
+app.get("/V3",(req,res)=>{
+  res.sendFile(__dirname+"/public/v2.html")
+})
 app.post('/download', async (req, res) => {
   const { url } = req.body;
   if (!url) {
